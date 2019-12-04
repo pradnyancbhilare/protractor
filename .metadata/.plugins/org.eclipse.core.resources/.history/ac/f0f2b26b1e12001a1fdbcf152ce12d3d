@@ -1,0 +1,46 @@
+// Example of one Configuration file
+
+var jasmine2HtmlReporter = require("protractor-jasmine2-html-reporter");
+
+exports.config = {
+
+	directConnect: true,
+
+	// Capabilities to be passed to webdriver instance
+	capabilities: {
+
+		'browserName':'firefox'
+	},
+	
+	//seleniumAddress: 'http://localhost:4444/wd/hub',
+
+	// Framework to use. Jasmine is recommended.
+	framework: 'jasmine',
+	
+	// Spec patterns are relative to the current working directory
+	// when protractor is called.
+	specs: ['myFirstTestCase.js', 'mySecondTestCase.js'],
+
+	// Options to be passed to Jasmine
+	jasmineNodeOpts: {
+
+		defaultTimeoutInterval: 30000
+	},
+	
+	// For reporting
+	onPrepare: function(){
+		jasmine.getEnv().addReporter(new jasmine2HtmlReporter({
+			savePath: "./test/reports",
+			takeScreenshots: true,
+			takeScreenshotsOnlyOnFailures: false,
+			fixedScreenshotName: true,
+			cleanDestination: true,
+			showPassed: true,
+			fileName: 'MyReportName',
+			fileNameSeperator: '_'
+		}));
+	},
+
+}
+
+

@@ -1,0 +1,14 @@
+/**
+ *  This is my first javascript program
+ */
+
+var a, b;	// Declared two variables
+
+// Assign some values to these variables
+
+a = 3;
+b = 5;
+
+var c = a + b;
+
+console.log("The sum of the two number is " + c);

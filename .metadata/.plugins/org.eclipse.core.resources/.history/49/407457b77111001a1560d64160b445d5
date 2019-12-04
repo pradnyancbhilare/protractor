@@ -1,0 +1,18 @@
+describe("My test suite", function(){
+
+	it("Launch App and Verify Title", function(){
+	
+		browser.get("https://juliemr.github.io/protractor-demo/");
+		browser.manage().window().maximize();
+		expect(browser.getTitle()).toEqual("Super Calculator");
+		browser.sleep(5000);
+	});
+	
+	it("Addition of two numbers", function(){
+		
+		
+		
+	});
+
+
+});
